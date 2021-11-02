@@ -1,0 +1,35 @@
+﻿<Page x:Class="Travel.AddHotels"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Travel"
+      mc:Ignorable="d" 
+      MinHeight="800" MinWidth="1200" 
+      Title="AddHotels">
+
+    <Grid Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="267"/>
+            <ColumnDefinition Width="533"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107"/>
+            <RowDefinition Height="107"/>
+            <RowDefinition Height="94"/>
+            <RowDefinition Height="168"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Название" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="16" Margin="82,0,65,0"></TextBlock>
+        <TextBlock Text="Количество звезд" Grid.Row="1" VerticalAlignment="Center" Margin="65,0,65,0" FontSize="16" FontFamily="Comic Sans MS"></TextBlock>
+        <TextBlock Text="Страна" Grid.Row="2" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="16" Margin="90,0,57,0"></TextBlock>
+        <TextBox Text="{Binding Name}" MaxLength="100" Grid.Column="1" Height="30" VerticalAlignment="Center" TextChanged="TextBox_TextChanged_1" HorizontalAlignment="Center" Width="480"/>
+        <TextBox Text="{Binding CountOfStars}" Grid.Column="1" Width="480" HorizontalAlignment="Center" Margin="0,35,0,0" TextChanged="TextBox_TextChanged" Height="30" VerticalAlignment="Top" Grid.Row="1"/>
+        <ComboBox SelectedItem="{Binding Country}" Grid.Row="2" Grid.Column="1" x:Name="ComboCountries" DisplayMemberPath="Name" Margin="0,0,26,0" SelectionChanged="ComboCountries_SelectionChanged" Height="34" VerticalAlignment="Center" HorizontalAlignment="Right" Width="480"></ComboBox>
+
+        <Button Content="Сохранить" Grid.Row="3" Name="BtnSave" Background="#fac716" Click="BtnSave_Click" Margin="0,0,192,84" Grid.Column="1" HorizontalAlignment="Right" Width="225" Height="43" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Page>
